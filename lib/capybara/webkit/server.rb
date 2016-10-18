@@ -34,7 +34,7 @@ module Capybara
         @pipe_stdin,
           @pipe_stdout,
           @pipe_stderr,
-          @wait_thr = Open3.popen3(SERVER_PATH)
+          @wait_thr = Open3.popen3("xvfb-run #{SERVER_PATH}")
       end
 
       def discover_port
